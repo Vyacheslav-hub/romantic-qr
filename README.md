@@ -11,6 +11,12 @@
 - Yarn
 - QR Code Styling
 
+### 🔗 Страница
+
+[Открыть Romantic QR](https://vyacheslav-hub.github.io/romantic-qr/)
+
+[Romantic Page](https://vyacheslav-hub.github.io/romantic-page/)
+
 ### 🚀 Запуск
 
 ```bash
