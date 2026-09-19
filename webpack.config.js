@@ -7,6 +7,7 @@ export default {
 
     output: {
         clean: true,
+        publicPath: '/romantic-qr/',
     },
 
     devServer: {
