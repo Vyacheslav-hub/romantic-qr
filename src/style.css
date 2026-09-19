@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 24px;
+
+    background: #ffffff;
+}
+
+.qr-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart {
+    position: absolute;
+
+    color: #ff668e;
+    font-size: 24px;
+
+    line-height: 1;
+}
+
+.heart--top-left {
+    top: -20px;
+    left: -20px;
+}
+
+.heart--top-right {
+    top: -20px;
+    right: -20px;
+}
+
+.heart--bottom-left {
+    bottom: -20px;
+    left: -20px;
+}
+
+.heart--bottom-right {
+    right: -20px;
+    bottom: -20px;
+}
