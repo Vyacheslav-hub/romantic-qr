@@ -1,6 +1,7 @@
 import './style.css';
 
 import QRCodeStyling from 'qr-code-styling';
+import { jsPDF } from 'jspdf';
 
 function createFlower() {
     const canvas = document.createElement('canvas');
@@ -71,12 +72,31 @@ const container = document.querySelector('#qr');
 
 qrCode.append(container);
 
-const downloadButton =
-    document.querySelector('#download-svg');
+// Скачать PDF 3 × 3 см
+const downloadPdfButton =
+    document.querySelector('#download-pdf');
 
-downloadButton.addEventListener('click', () => {
-    qrCode.download({
-        name: 'romantic-qr',
-        extension: 'svg',
+downloadPdfButton.addEventListener('click', async () => {
+    const blob = await qrCode.getRawData('png');
+
+    const imageUrl = URL.createObjectURL(blob);
+
+    const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: [30, 30],
     });
+
+    pdf.addImage(
+        imageUrl,
+        'PNG',
+        0,
+        0,
+        30,
+        30
+    );
+
+    pdf.save('romantic-qr-3x3cm.pdf');
+
+    URL.revokeObjectURL(imageUrl);
 });
